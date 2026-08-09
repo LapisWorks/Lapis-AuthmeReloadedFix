@@ -116,4 +116,4 @@ time) so it stays compatible across AuthMe 5.x/6.x.
 
 ## License
 
-Provided as-is; AuthMeReloaded itself remains GPL-3.0.
+This plugin is released under the [MIT License](LICENSE). AuthMeReloaded itself remains GPL-3.0.
