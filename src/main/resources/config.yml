@@ -1,0 +1,30 @@
+# Lapis-AuthmeReloadedFix 配置
+# 这个插件作为 AuthMeReloaded 6.x 的补充修复，与 AuthMe 一起安装。
+
+# 防幽灵玩家/双重登录：服务器已有同名在线玩家时踢出新登录者
+ghost-player-fix:
+  enabled: true
+  kick-message: "&cA player with the same name is already online. Please try again."
+
+# 基岩版 (Floodgate) 自动登录：基岩玩家加入后直接视为已登录
+# 需要安装 floodgate 插件
+bedrock-auto-login:
+  enabled: true
+  # 仅对已注册的基岩玩家自动登录；未注册的进入正常注册流程
+  only-registered: true
+
+# Fake-Player (FPP) 机器人兼容：机器人加入后自动标记为已登录，
+# 避免被 AuthMe 的登录超时踢出（默认 /authme 登录超时）
+# 需要安装 FakePlayerPlugin
+# 机制：为机器人创建一个临时 AuthMe 账号（随机密码+自动登录），
+#       机器人离开时删除；崩溃/关服遗留的临时账号会在下次启动时清理。
+# 注意：若机器人名与真实玩家已注册的账号重名，我们不会自动登录到该账号（避免顶号）。
+fpp-bot-auto-login:
+  enabled: true
+  # 启动时清理上次崩溃遗留的临时机器人账号
+  cleanup-on-startup: true
+
+# PlaceholderAPI 变量扩展，提供 %authme_isloggedin% / %authme_isregistered% 等
+# 需要安装 PlaceholderAPI
+placeholder-api:
+  enabled: true

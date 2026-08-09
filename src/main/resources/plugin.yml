@@ -1,0 +1,24 @@
+name: Lapis-AuthmeReloadedFix
+version: '${version}'
+
+main: mc506lw.lapisAuthmeReloadedFix.LapisAuthmeReloadedFix
+api-version: '1.21.1'
+folia-supported: true
+load: POSTWORLD
+
+softdepend:
+  - AuthMe
+  - floodgate
+  - FakePlayerPlugin
+  - PlaceholderAPI
+
+permissions:
+  lapisauthmefix.reload:
+    description: Allows reloading Lapis-AuthmeReloadedFix configuration
+    default: op
+
+commands:
+  lapisauthmefix:
+    description: Lapis-AuthmeReloadedFix management command
+    usage: /lapisauthmefix reload
+    permission: lapisauthmefix.reload
